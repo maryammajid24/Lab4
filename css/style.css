@@ -1,1 +1,211 @@
 
+/* DESIGN TOKENS */
+:root {
+  --primary: #385B4A;
+  --sage: #DDE7D8;
+  --cream: #F0E5D6;
+  --footer: #E5E9DF;
+  --text: #263F30;
+  --spacing: 24px;
+}
+
+/* GENERAL STYLES */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: var(--text);
+  background-color: #FFFFFF;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* HEADER - FLEXBOX */
+.site-header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+  width: calc(100% - 40px);
+  max-width: 1280px;
+  margin: auto;
+  padding: 30px 0;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: var(--primary);
+}
+
+nav {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+nav a:hover {
+  color: #779A7D;
+}
+
+/* MAIN CONTAINER */
+.container {
+  width: calc(100% - 40px);
+  max-width: 1280px;
+  margin: auto;
+}
+
+/* HERO - MOBILE FIRST */
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+.hero-main {
+  background-color: var(--sage);
+  padding: 32px;
+}
+
+.hero-sidebar {
+  background-color: var(--cream);
+  padding: 32px;
+}
+
+.eyebrow {
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.hero-main h1 {
+  font-size: 36px;
+  margin: 12px 0;
+}
+
+.hero-sidebar h2 {
+  font-size: 24px;
+  margin: 12px 0;
+}
+
+.hero-main p,
+.hero-sidebar p {
+  line-height: 1.5;
+}
+
+/* BUTTONS */
+.btn {
+  display: inline-block;
+  background-color: var(--primary);
+  color: white;
+  padding: 12px 18px;
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: bold;
+  margin-top: 16px;
+}
+
+.btn:hover {
+  background-color: #567B60;
+}
+
+/* WORKSHOP GALLERY */
+.section-title {
+  font-size: 28px;
+  margin: 40px 0 24px;
+}
+
+/* CSS GRID */
+.cards-gallery {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+/* FLEXBOX CARDS */
+.card {
+  display: flex;
+  flex-direction: column;
+  background-color: #F8F5EF;
+  padding: 20px;
+  gap: 12px;
+}
+
+.card img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+.card h3 {
+  font-size: 22px;
+  margin: 0;
+}
+
+.card p {
+  font-size: 14px;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.card .btn {
+  margin-top: auto;
+  align-self: flex-start;
+}
+
+/* FOOTER - FLEXBOX */
+.site-footer {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
+  justify-content: space-between;
+  width: calc(100% - 40px);
+  max-width: 1280px;
+  margin: 50px auto 20px;
+  padding: 24px;
+  background-color: var(--footer);
+  font-size: 14px;
+}
+
+.footer-links {
+  display: flex;
+  gap: 24px;
+}
+
+/* DESKTOP RESPONSIVE LAYOUT */
+@media (min-width: 768px) {
+
+  .site-header {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  /* 2:1 HERO GRID */
+  .hero-grid {
+    grid-template-columns: 2fr 1fr;
+  }
+
+  .hero-main h1 {
+    font-size: 48px;
+  }
+
+  /* RESPONSIVE WORKSHOP GRID */
+  .cards-gallery {
+    grid-template-columns:
+      repeat(auto-fit, minmax(250px, 1fr));
+  }
+
+  .site-footer {
+    flex-direction: row;
+  }
+
+}
+
